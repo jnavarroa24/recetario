@@ -1,5 +1,7 @@
 package com.javier.recetario.application;
 
+import com.javier.recetario.application.dto.CreateRecipeDto;
+import com.javier.recetario.application.mapper.RecipeMapper;
 import com.javier.recetario.application.service.RecipeService;
 import com.javier.recetario.domain.model.Recipe;
 import com.javier.recetario.domain.repository.RecipeRepository;
@@ -7,21 +9,21 @@ import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
-@RequiredArgsConstructor
-@AllArgsConstructor
+
 @Slf4j
 public class RecipeServiceImpl implements RecipeService {
 
     private final RecipeRepository repository;
+    private final RecipeMapper mapper;
 
-    public RecipeServiceImpl(RecipeRepository repository) {
+    public RecipeServiceImpl(RecipeRepository repository, RecipeMapper mapper) {
         this.repository = repository;
+        this.mapper = mapper;
     }
 
+
     @Override
-    public Recipe create(Recipe recipe) {
-
-        return repository.save(recipe);
-
+    public void create(CreateRecipeDto recipe) {
+        repository.save(mapper.toDomain(recipe));
     }
 }

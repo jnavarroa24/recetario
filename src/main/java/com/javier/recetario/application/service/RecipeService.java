@@ -1,9 +1,10 @@
 package com.javier.recetario.application.service;
 
-import com.javier.recetario.domain.model.Recipe;
+
+import com.javier.recetario.application.dto.CreateRecipeDto;
 
 public interface RecipeService {
 
-    Recipe create(Recipe recipe);
+    void create(CreateRecipeDto recipe);
 
 }
