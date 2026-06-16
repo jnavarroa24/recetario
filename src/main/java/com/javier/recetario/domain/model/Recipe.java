@@ -12,34 +12,14 @@ public class Recipe {
 
     private List<Ingredient> ingredients;
 
-    public Recipe(
-            String id,
-            String title,
-            Integer baseServings,
-            List<Ingredient> ingredients
-    ) {
-
-        validate(title, baseServings);
-
+    public Recipe(String id, String title, Integer baseServings, List<Ingredient> ingredients) {
         this.id = id;
         this.title = title;
         this.baseServings = baseServings;
         this.ingredients = ingredients;
     }
 
-    private void validate(
-            String title,
-            Integer servings
-    ) {
 
-        if (title == null || title.isBlank()) {
-            throw new IllegalArgumentException("Title required");
-        }
-
-        if (servings <= 0) {
-            throw new IllegalArgumentException("Invalid servings");
-        }
-    }
 
     public String getId() {
         return id;

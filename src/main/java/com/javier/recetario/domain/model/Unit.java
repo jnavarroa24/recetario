@@ -1,11 +1,7 @@
 package com.javier.recetario.domain.model;
 
-public enum Unit {
+public class Unit {
 
-    UNIT,
-    GRAM,
-    KILOGRAM,
-    MILLILITER,
-    LITER
+   private String unit;
 
 }
