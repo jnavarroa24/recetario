@@ -2,10 +2,10 @@ package com.javier.recetario.application.service;
 
 
 import com.javier.recetario.application.dto.CreateRecipeDto;
-import org.springframework.stereotype.Service;
+import com.javier.recetario.application.dto.CreateRecipeResponseDto;
 
 public interface RecipeService {
 
-    void create(CreateRecipeDto recipe);
+    CreateRecipeResponseDto create(CreateRecipeDto recipe);
 
 }

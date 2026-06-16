@@ -1,6 +1,7 @@
 package com.javier.recetario.application;
 
 import com.javier.recetario.application.dto.CreateRecipeDto;
+import com.javier.recetario.application.dto.CreateRecipeResponseDto;
 import com.javier.recetario.application.mapper.RecipeMapper;
 import com.javier.recetario.application.service.RecipeService;
 import com.javier.recetario.domain.model.Recipe;
@@ -25,7 +26,8 @@ public class RecipeServiceImpl implements RecipeService {
 
 
     @Override
-    public void create(CreateRecipeDto recipe) {
+    public CreateRecipeResponseDto create(CreateRecipeDto recipe) {
         repository.save(mapper.toDomain(recipe));
+        return mapper.toResponse(recipe);
     }
 }

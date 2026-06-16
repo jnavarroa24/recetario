@@ -1,9 +1,10 @@
 package com.javier.recetario.interfaces.rest.controller;
 
+import com.javier.recetario.application.dto.CreateRecipeResponseDto;
 import com.javier.recetario.application.service.RecipeService;
 import com.javier.recetario.interfaces.rest.mapper.RecipeRestMapper;
 import com.javier.recetario.interfaces.rest.request.CreateRecipeRequest;
-import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -24,13 +25,9 @@ public class RecipeController {
     }
 
     @PostMapping
-    @ResponseStatus(
-            HttpStatus.CREATED
-    )
-    public void create(@RequestBody CreateRecipeRequest request) {
-        service.create(mapper.toDto(request)
-        );
-
+    public ResponseEntity<CreateRecipeResponseDto> create(@RequestBody CreateRecipeRequest request) {
+        return ResponseEntity.ok(service.create(mapper.toDto(request)));
     }
+
 
 }
