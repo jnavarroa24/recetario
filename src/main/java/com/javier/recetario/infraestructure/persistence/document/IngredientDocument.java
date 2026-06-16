@@ -1,4 +1,4 @@
-package com.javier.recetario.infraestructure.persistence;
+package com.javier.recetario.infraestructure.persistence.document;
 
 import java.math.BigDecimal;
 

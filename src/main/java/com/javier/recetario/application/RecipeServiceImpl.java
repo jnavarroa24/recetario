@@ -8,9 +8,11 @@ import com.javier.recetario.domain.repository.RecipeRepository;
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
 
 
 @Slf4j
+@Service
 public class RecipeServiceImpl implements RecipeService {
 
     private final RecipeRepository repository;
